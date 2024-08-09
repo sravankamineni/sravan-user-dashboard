@@ -37,16 +37,17 @@ const Login = () => {
         if (validateForm()) {
             try {
                 const response = await axios.post('https://syoft.dev/Api/userlogin/api/userlogin', formData);
+                console.log(response)
                 if (response.data.status) {
-                    // console.log(response)
                     localStorage.setItem('user', JSON.stringify(response.data.user_data[0]));
+                    alert("Login Successful")
                     navigate('/dashboard');
                 }
                 else {
-                    alert("Invalid credentials");
+                    alert(response.data.msg);
                 }
             } catch (error) {
-                alert('Error during login');
+                alert(error);
             }
         }
     };

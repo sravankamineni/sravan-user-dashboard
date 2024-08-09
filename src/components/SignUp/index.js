@@ -52,8 +52,12 @@ const SignUp = () => {
             };
             try {
                 const response = await axios.post('https://syoft.dev/Api/user_registeration/api/user_registeration', payload);
+                console.log(response)
                 if (response.data.status) {
                     navigate('/login');
+                }
+                else{
+                    alert(response.data.msg)
                 }
             } catch (error) {
                 console.error('Error during sign up:', error);

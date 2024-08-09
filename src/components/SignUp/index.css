@@ -61,8 +61,10 @@
 }
 
 .btn {
-    width: 100%;
-    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    align-self: flex-start;
+    padding: 15px 32px;
     background-color: #007BFF;
     color: white;
     border: none;
